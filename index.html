@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Configuración básica del documento y conexión con la hoja de estilos. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portafolio FullStack II">
+    <link rel="stylesheet" href="style.css">
+    <title>Mi Portafolio</title>
+</head>
+<body>
+    <!-- Encabezado fijo con el nombre del portafolio y enlaces de navegación interna. -->
+    <header class="encabezado">
+        <nav class="navegacion contenedor" aria-label="Navegación principal">
+            <a class="logotipo" href="#inicio">Mi Portafolio</a>
+
+            <ul class="enlaces-navegacion">
+                <li><a href="#Sobre-Mi">Sobre mí</a></li>
+                <li><a href="#Habilidades">Habilidades</a></li>
+                <li><a href="#Proyectos">Proyectos</a></li>
+                <li><a href="#Contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contenido principal del portafolio. -->
+    <main>
+        <!-- Presentación inicial de la persona propietaria del portafolio. -->
+        <section class="seccion seccion-inicio" id="inicio" aria-labelledby="titulo-principal">
+            <div class="contenedor contenido-inicio">
+                <p class="saludo">Hola, soy</p>
+                <h1 id="titulo-principal">Aolani Caiguan</h1>
+                <p class="descripcion-inicio">Estudiante de Ingeniería en Informática y desarrolladora en formación.</p>
+                <a class="boton boton-principal" href="#Proyectos">Ver mis proyectos</a>
+            </div>
+        </section>
+
+        <!-- Descripción personal y experiencia de la autora. -->
+        <section class="seccion" id="Sobre-Mi" aria-labelledby="sobre-mi">
+            <div class="contenedor contenido-seccion">
+                <h2 id="sobre-mi">Sobre mí</h2>
+                <p class="texto-seccion">
+                Soy estudiante de Ingeniería en Informática en Duoc UC, con especial interés en el desarrollo backend y 
+                la lógica detrás de los sistemas que hacen funcionar las aplicaciones. Me dedico a dar clases de robótica educativa, donde enseño programación y
+                electrónica básica, una experiencia que ha fortalecido mis habilidades de comunicación y me ha permitido aplicar conceptos técnicos de forma práctica y didáctica. 
+                </p>
+            </div>
+        </section>
+
+        <!-- Lista de tecnologías y conocimientos principales. -->
+        <section class="seccion seccion-alternativa" id="Habilidades" aria-labelledby="titulo-habilidades">
+            <div class="contenedor contenido-seccion">
+            <h2 id="titulo-habilidades">Habilidades</h2>
+            <ul class="lista-habilidades">
+                <li>Java</li>
+                <li>Python</li>
+                <li>SQL/Oracle</li>
+                <li>Git/Github</li>
+                <li>APIs REST</li>
+                <li>Spring Boot</li>
+
+            </ul>
+            </div>
+        </section>
+
+        <!-- Colección de proyectos, con descripción, tecnologías y enlace al código. -->
+        <section class="seccion" id="Proyectos" aria-labelledby="titulo-proyectos">
+            <div class="contenedor contenido-seccion">
+            <h2 id="titulo-proyectos">Proyectos</h2>
+
+            <div class="rejilla-proyectos">
+            <article class="tarjeta-proyecto">
+                <h3>App Polisport</h3>
+                <p>PoliSport es una plataforma escalable en microservicios que centraliza la gestión deportiva, médica, 
+                nutricional y el control de accesos en centros polideportivos, eliminando la duplicidad de datos.
+                </p>
+                <p>Tecnologías: Java, Spring Boot, Docker</p>
+                <a class="enlace-proyecto" href="https://github.com/Rena41615/Proyecto-polideportivo-PoliSport.git" target="_blank" rel="noopener noreferrer">Ver Repositorio</a>
+            </article>
+
+            <article class="tarjeta-proyecto">
+                <h3>Sistema Inteligente de Gestión de Inventario y Agente Automatizado de Correos</h3>
+                <p>Plataforma de gestión de inventarios impulsada por IA que integra un agente LLM conversacional, 
+                    reportes automatizados por correo y una interfaz gráfica en Streamlit. 
+                    Desplegada bajo microservicios con Docker y Docker Compose para garantizar una operación escalable, 
+                    inteligente y libre de errores.
+                </p>
+                <p>Tecnologías: Python, Docker, Streamlit</p>
+                <a class="enlace-proyecto" href="https://github.com/jiuoqwvek/Proyecto_Ingenier-a_de_Soluciones_con_Inteligencia_Artificial.git" target="_blank" rel="noopener noreferrer">Ver Repositorio</a>
+            </article>
+            </div>
+            </div>
+        </section>
+
+        <!-- Datos de contacto y formulario para enviar un mensaje. -->
+        <section class="seccion seccion-alternativa" id="Contacto" aria-labelledby="titulo-contacto">
+            <div class="contenedor contenido-seccion">
+            <h2 id="titulo-contacto">Contacto</h2>
+
+            <address class="datos-contacto">
+                <a href="mailto:noemiaolanicaiguan@gmail.com">noemiaolanicaiguan@gmail.com</a>
+                <a href="https://github.com/jiuoqwvek" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </address>
+
+            <form class="formulario-contacto" action="mailto:noemiaolanicaiguan@gmail.com" method="post" enctype="text/plain">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="email">Correo electrónico</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="mensaje">Mensaje</label>
+                <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+
+                <button class="boton boton-principal" type="submit">Enviar mensaje</button>
+            </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pie de página con la información de derechos de autor. -->
+    <footer class="pie-pagina">
+        <p>&copy; 2026 Elu. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
