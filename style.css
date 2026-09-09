@@ -1,0 +1,447 @@
+/* Variables generales: cambia estos valores para personalizar rápidamente la apariencia. */
+:root {
+	--color-fondo: #ffe3ef;
+	--color-fondo-alternativo: #fff9ed;
+	--color-superficie: #ffffff;
+	--color-principal: #ffc3dc;
+	--color-principal-oscuro: #cf7f9c;
+	--color-acento: #dcfbf9;
+	--color-texto: #453f39;
+	--color-texto-suave: #847463;
+	--color-borde: #e0d9d2;
+	--color-enlace: #d8407f;
+	--sombra-suave: 0 12px 30px #6a6b6b1a;
+	--ancho-contenido: 1080px;
+}
+
+/* Reinicio básico para que todos los elementos comiencen con medidas previsibles. */
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+/* Permite desplazarse suavemente al pulsar un enlace del menú. */
+html {
+	scroll-behavior: smooth;
+}
+
+/* Estilos generales de la página: fuente, fondo, color y altura de lectura. */
+body {
+	/* Combina el fondo principal con el fondo alternativo para crear profundidad visual. */
+	background: var(--color-fondo);
+	color: var(--color-texto);
+	font-family: Georgia, "Times New Roman", serif;
+	line-height: 1.6;
+}
+
+/* Quita el subrayado predeterminado y conserva el color según el contexto. */
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+/* Limita el contenido a un ancho cómodo y lo centra en la pantalla. */
+.contenedor {
+	margin: 0 auto;
+	max-width: var(--ancho-contenido);
+	width: min(90%, var(--ancho-contenido));
+}
+
+/* Mantiene visible el encabezado mientras la persona recorre la página. */
+.encabezado {
+	background: #ffffff;
+	border-bottom: 1px solid var(--color-borde);
+	position: sticky;
+	top: 0;
+	z-index: 10;
+}
+
+/* Alinea el logotipo y los enlaces del menú en una misma fila. */
+.navegacion {
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+	min-height: 65px;
+	max-width: 1400px;
+	width: 96%;
+}
+
+/* Identifica visualmente el nombre del portafolio. */
+.logotipo {
+	align-items: center;
+	color: var(--color-principal-oscuro);
+	display: inline-flex;
+	font-size: 1.27rem;
+	font-weight: bold;
+	gap: 6px;
+}
+
+.estrella {
+	fill: var(--color-principal-oscuro);
+	height: 20px;
+	stroke: var(--color-principal-oscuro);
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	stroke-width: 1.2;
+	width: 20px;
+}
+
+/* Organiza los enlaces principales con separación uniforme. */
+.enlaces-navegacion {
+	align-items: center;
+	display: flex;
+	gap: 24px;
+	list-style: none;
+}
+
+/* Destaca los enlaces cuando el cursor pasa sobre ellos. */
+.enlaces-navegacion a {
+	color: var(--color-texto-suave);
+	font-size: 0.95rem;
+	transition: color 0.2s ease;
+}
+
+.enlaces-navegacion a:hover {
+	color: var(--color-principal-oscuro);
+}
+
+/* Define el espacio vertical común de las secciones. */
+.seccion {
+	padding: 88px 0;
+}
+
+/* Cambia el fondo de algunas secciones para separar visualmente el contenido. */
+.seccion-alternativa {
+	background: var(--color-fondo-alternativo);
+}
+
+/* Centra el contenido textual de las secciones interiores. */
+.contenido-seccion {
+	text-align: center;
+}
+
+/* Presentación principal con fondo de acento y borde inferior. */
+.seccion-inicio {
+	/* Mantiene el color base de la tarjeta de presentación. */
+	background-color: var(--color-acento);
+	border-bottom: 1px solid var(--color-borde);
+	border-radius: 0;
+	min-height: 550px;
+	overflow: visible;
+	padding: 140px 0 120px;
+	position: relative;
+	width: 100%;
+	margin: 0;
+	z-index: 1;
+}
+
+/* Crea una capa de puntos más grandes y la gira para formar líneas diagonales. */
+.seccion-inicio::before {
+	/* Repite el color base debajo de los puntos para cubrir también las esquinas. */
+	background-color: var(--color-acento);
+	background-image: radial-gradient(rgba(255, 255, 255, 0.55) 1.5px, transparent 3px);
+	background-size: 15px 15px;
+	content: "";
+	inset: 0;
+	pointer-events: none;
+	position: absolute;
+	clip-path: inset(0);
+}
+
+/* Forma pequeños bultos para dar un acabado parecido a una nube. */
+.seccion-inicio::after {
+	background: radial-gradient(circle 55px at 43px 0, var(--color-acento) 99%, transparent 100%);
+	background-size: 85px 80px;
+	bottom: -46px;
+	content: "";
+	height: 59px;
+	left: 0px;
+	pointer-events: none;
+	position: absolute;
+	right: 0px;
+}
+
+/* Mantiene el texto y el botón por encima de la decoración de puntos. */
+.contenido-inicio {
+	position: relative;
+	z-index: 1;
+}
+
+/* Limita el ancho de la introducción para mejorar la lectura. */
+.contenido-inicio {
+	max-width: 760px;
+	text-align: center;
+}
+
+/* Texto breve que aparece antes del nombre. */
+.saludo {
+	color: var(--color-texto-suave);
+	font-size: 1.1rem;
+	font-weight: bold;
+	letter-spacing: 0.08em;
+	margin-bottom: 10px;
+	text-transform: uppercase;
+}
+
+/* Título más importante de todo el portafolio. */
+.contenido-inicio h1 {
+	color: var(--color-principal-oscuro);
+	font-size: clamp(3rem, 5vw, 3.5rem);
+	line-height: 1;
+	margin-bottom: 24px;
+}
+
+/* Descripción corta que explica el perfil profesional. */
+.descripcion-inicio {
+	color: var(--color-texto-suave);
+	font-size: 1.2rem;
+	margin: 0 auto 30px;
+	max-width: 620px;
+}
+
+/* Apariencia común de los botones y enlaces de acción. */
+.boton {
+	border: 0;
+	border-radius: 15px;
+	cursor: pointer;
+	display: inline-block;
+	font: inherit;
+	font-weight: bold;
+	padding: 13px 22px;
+	transition: background 0.2s ease, transform 0.2s ease;
+}
+
+/* Botón principal con el color institucional del portafolio. */
+.boton-principal {
+	background: #ffffff;
+	color: var(--color-texto-suave);
+}
+
+.boton-principal:hover {
+	background: var(--color-principal-oscuro);
+  color: #fffffF;
+	transform: translateY(-2px);
+}
+
+/* Estilo de los títulos de segundo nivel. */
+.contenido-seccion h2 {
+	color: var(--color-principal-oscuro);
+	font-size: clamp(2rem, 6vw, 3rem);
+	margin-bottom: 22px;
+}
+
+/* Ancho máximo y color del texto descriptivo. */
+.texto-seccion {
+	color: var(--color-texto-suave);
+	margin: 0 auto;
+	max-width: 760px;
+}
+
+/* Muestra las habilidades como etiquetas ordenadas y flexibles. */
+.lista-habilidades {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 14px;
+	justify-content: center;
+	list-style: none;
+}
+
+/* Apariencia individual de cada habilidad. */
+.lista-habilidades li {
+	background: var(--color-superficie);
+	border: 1px solid var(--color-borde);
+	border-radius: 24px;
+	color: var(--color-principal-oscuro);
+	font-size: 1.05rem;
+	font-weight: bold;
+	padding: 12px 22px;
+}
+
+/* Divide los proyectos en columnas iguales en pantallas amplias. */
+.rejilla-proyectos {
+	display: grid;
+	gap: 24px;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	text-align: left;
+}
+
+/* Agrupa cada proyecto dentro de una superficie con borde y sombra. */
+.tarjeta-proyecto {
+	background: var(--color-superficie);
+	border: 1px solid var(--color-borde);
+	border-radius: 8px;
+	box-shadow: var(--sombra-suave);
+	padding: 28px;
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tarjeta-proyecto:hover {
+	box-shadow: 0 16px 34px #222d2c26;
+	transform: translateY(-4px);
+}
+
+/* Da jerarquía al nombre de cada proyecto. */
+.tarjeta-proyecto h3 {
+	color: var(--color-principal-oscuro);
+	font-size: 1.35rem;
+	margin-bottom: 14px;
+}
+
+/* Separa y suaviza el texto descriptivo de los proyectos. */
+.tarjeta-proyecto p {
+	color: var(--color-texto-suave);
+	margin-bottom: 16px;
+}
+
+/* Enlace que lleva al repositorio del proyecto. */
+.enlace-proyecto {
+	color: var(--color-principal);
+	font-weight: bold;
+}
+
+.enlace-proyecto:hover {
+	color: var(--color-enlace);
+	text-decoration: underline;
+}
+
+/* Separa los datos de contacto y permite que se acomoden en celular. */
+.datos-contacto {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+	justify-content: center;
+	margin: 0 auto 30px;
+}
+
+/* Destaca los enlaces de contacto. */
+.datos-contacto a {
+	color: var(--color-enlace);
+	font-weight: bold;
+}
+
+.datos-contacto a:hover {
+	color: var(--color-enlace);
+	text-decoration: underline;
+}
+
+/* Limita el formulario para que sus campos sean fáciles de leer. */
+.formulario-contacto {
+	display: grid;
+	gap: 10px;
+	margin: 0 auto;
+	max-width: 620px;
+	text-align: left;
+}
+
+/* Etiquetas del formulario: indican qué información debe escribirse. */
+.formulario-contacto label {
+	color: var(--color-texto);
+	font-weight: bold;
+}
+
+/* Apariencia compartida de los campos de entrada y del mensaje. */
+.formulario-contacto input,
+.formulario-contacto textarea {
+	background: var(--color-superficie);
+	border: 1px solid var(--color-borde);
+	border-radius: 5px;
+	color: var(--color-texto);
+	font: inherit;
+	padding: 12px;
+	width: 100%;
+}
+
+/* Permite ampliar el mensaje verticalmente sin deformar el formulario. */
+.formulario-contacto textarea {
+	min-height: 140px;
+	resize: vertical;
+}
+
+/* Señala visualmente el campo que está activo. */
+.formulario-contacto input:focus,
+.formulario-contacto textarea:focus {
+	border-color: var(--color-principal);
+	outline: 3px solid #4c3f272e;
+}
+
+/* Marca en rojo el campo que no pasó la validación de script.js. */
+.formulario-contacto .invalido {
+	border-color: var(--color-error, #c0392b);
+}
+
+/* Texto de error que aparece justo debajo del campo inválido. */
+.error-mensaje {
+	color: var(--color-error, #c0392b);
+	font-size: 0.85rem;
+}
+
+/* Mensaje general de resultado (éxito o error) debajo del botón. */
+.resultado-formulario:not(:empty) {
+	font-weight: bold;
+}
+
+.resultado-formulario.resultado-error {
+	color: var(--color-error, #c0392b);
+}
+
+/* Alinea el botón del formulario con los demás campos. */
+.formulario-contacto .boton {
+	justify-self: start;
+	margin-top: 8px;
+  	border: 1px solid var(--color-borde);
+	border-radius: 15px;
+}
+
+/* Presentación del texto inferior de la página. */
+.pie-pagina {
+	background: #ffffff;
+	color: var(--color-texto-suave);
+  border: 1px solid var(--color-borde);
+	padding: 28px 20px;
+	text-align: center;
+}
+
+/* Ajustes para tablet: el menú puede ocupar dos líneas y los proyectos una sola columna. */
+@media (max-width: 760px) {
+	.navegacion {
+		align-items: flex-start;
+		flex-direction: column;
+		gap: 12px;
+		padding: 16px 0;
+	}
+
+	.enlaces-navegacion {
+		flex-wrap: wrap;
+		gap: 10px 16px;
+	}
+
+	.rejilla-proyectos {
+		grid-template-columns: 1fr;
+	}
+}
+
+/* Ajustes para celular: reduce el espacio y hace el botón más cómodo de pulsar. */
+@media (max-width: 480px) {
+	.seccion {
+		padding: 64px 0;
+	}
+
+	.seccion-inicio {
+		min-height: 430px;
+		padding: 100px 0 80px;
+	}
+
+	.contenido-inicio h1 {
+		font-size: clamp(2.7rem, 15vw, 4.5rem);
+	}
+
+	.boton {
+		text-align: center;
+		width: 100%;
+	}
+
+	.formulario-contacto .boton {
+		justify-self: stretch;
+	}
+}
