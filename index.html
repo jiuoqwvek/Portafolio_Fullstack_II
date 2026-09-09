@@ -11,7 +11,7 @@
     <!-- Encabezado fijo con el nombre del portafolio y enlaces de navegación interna. -->
     <header class="encabezado">
         <nav class="navegacion contenedor" aria-label="Navegación principal">
-            <a class="logotipo" href="#inicio">Mi Portafolio</a>
+            <a class="logotipo" href="#inicio">Mi Portafolio <svg class="estrella" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 5.9 6.6 1-4.8 4.6 1.1 6.5-5.8-3.1-5.8 3.1 1.1-6.5-4.8-4.6 6.6-1z" /></svg></a>
 
             <ul class="enlaces-navegacion">
                 <li><a href="#Sobre-Mi">Sobre mí</a></li>
@@ -101,17 +101,23 @@
                 <a href="https://github.com/jiuoqwvek" target="_blank" rel="noopener noreferrer">GitHub</a>
             </address>
 
-            <form class="formulario-contacto" action="mailto:noemiaolanicaiguan@gmail.com" method="post" enctype="text/plain">
+            <form id="formulario-contacto" class="formulario-contacto" action="https://formsubmit.co/noemiaolanicaiguan@gmail.com" method="POST" novalidate>
+                <input type="hidden" name="_subject" value="Nuevo mensaje desde el portafolio">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
                 <label for="nombre">Nombre</label>
-                <input type="text" id="nombre" name="nombre" required>
+                <input type="text" id="nombre" name="nombre" minlength="3" required>
 
                 <label for="email">Correo electrónico</label>
                 <input type="email" id="email" name="email" required>
 
                 <label for="mensaje">Mensaje</label>
-                <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+                <textarea id="mensaje" name="mensaje" rows="5" minlength="10" required></textarea>
 
                 <button class="boton boton-principal" type="submit">Enviar mensaje</button>
+
+                <p id="resultado" class="resultado-formulario" aria-live="polite"></p>
             </form>
             </div>
         </section>
@@ -121,5 +127,7 @@
     <footer class="pie-pagina">
         <p>&copy; 2026 Elu. Todos los derechos reservados.</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
