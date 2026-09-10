@@ -4,12 +4,14 @@
 	--color-fondo-alternativo: #fff9ed;
 	--color-superficie: #ffffff;
 	--color-principal: #ffc3dc;
-	--color-principal-oscuro: #cf7f9c;
+	--color-principal-oscuro: #e48dad;
 	--color-acento: #dcfbf9;
 	--color-texto: #453f39;
 	--color-texto-suave: #847463;
+	--color-decoracion: #b7a38e;
 	--color-borde: #e0d9d2;
 	--color-enlace: #d8407f;
+	--color-nombre: #67c4d2;
 	--sombra-suave: 0 12px 30px #6a6b6b1a;
 	--ancho-contenido: 1080px;
 }
@@ -126,11 +128,10 @@ a {
 	/* Mantiene el color base de la tarjeta de presentación. */
 	background-color: var(--color-acento);
 	border-bottom: 1px solid var(--color-borde);
-	border-radius: 0;
-	min-height: 550px;
+	min-height: 320px;
 	overflow: visible;
-	padding: 140px 0 120px;
-	position: relative;
+	padding: 68px 0 30px;
+	position: center;
 	width: 100%;
 	margin: 0;
 	z-index: 1;
@@ -174,19 +175,26 @@ a {
 	text-align: center;
 }
 
+/* Ilustración de perfil: se muestra tal cual, sin marco ni fondo, respetando su transparencia. */
+.foto-perfil {
+	height: auto;
+	margin: 0 auto 24px;
+	width: 250px;
+}
+
 /* Texto breve que aparece antes del nombre. */
 .saludo {
 	color: var(--color-texto-suave);
 	font-size: 1.1rem;
 	font-weight: bold;
 	letter-spacing: 0.08em;
-	margin-bottom: 10px;
+	margin-bottom: 9px;
 	text-transform: uppercase;
 }
 
 /* Título más importante de todo el portafolio. */
 .contenido-inicio h1 {
-	color: var(--color-principal-oscuro);
+	color: var(--color-nombre);
 	font-size: clamp(3rem, 5vw, 3.5rem);
 	line-height: 1;
 	margin-bottom: 24px;
@@ -234,8 +242,8 @@ a {
 /* Ancho máximo y color del texto descriptivo. */
 .texto-seccion {
 	color: var(--color-texto-suave);
-	margin: 0 auto;
-	max-width: 760px;
+	margin: auto;
+	max-width: 800px;
 }
 
 /* Muestra las habilidades como etiquetas ordenadas y flexibles. */
@@ -325,6 +333,19 @@ a {
 	text-decoration: underline;
 }
 
+/* Alinea el logo de GitHub junto al texto del link. */
+.enlace-github {
+	align-items: center;
+	display: inline-flex;
+	gap: 6px;
+}
+
+.icono-github {
+	fill: currentColor;
+	height: 18px;
+	width: 18px;
+}
+
 /* Limita el formulario para que sus campos sean fáciles de leer. */
 .formulario-contacto {
 	display: grid;
@@ -402,6 +423,40 @@ a {
 	text-align: center;
 }
 
+/* La sección "Sobre mí" es el marco de referencia para ubicar los gatitos en sus orillas, y se agranda un poco para darles espacio. */
+.seccion-sobre-mi {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	min-height: 540px;
+	overflow: hidden;
+	position: relative;
+}
+
+/* Gatitos decorativos: se pegan a la orilla inferior de la sección, sin interferir con el texto ni con los clics. */
+.gato-decorativo {
+	color: var(--color-decoracion);
+	font-family: "arial", monospace;
+	font-size: 2rem;
+	line-height: 1.15;
+	margin: 0;
+	pointer-events: none;
+	position: absolute;
+	bottom: 16px;
+	z-index: 1;
+}
+
+.gato-decorativo--derecha {
+	right: 16px;
+}
+
+/* En pantallas angostas se ocultan, porque ya no queda espacio libre a los lados del texto. */
+@media (max-width: 900px) {
+	.gato-decorativo {
+		display: none;
+	}
+}
+
 /* Ajustes para tablet: el menú puede ocupar dos líneas y los proyectos una sola columna. */
 @media (max-width: 760px) {
 	.navegacion {
@@ -428,8 +483,8 @@ a {
 	}
 
 	.seccion-inicio {
-		min-height: 430px;
-		padding: 100px 0 80px;
+		min-height: 300px;
+		padding: 60px 0 50px;
 	}
 
 	.contenido-inicio h1 {
