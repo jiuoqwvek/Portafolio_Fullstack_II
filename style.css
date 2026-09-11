@@ -684,6 +684,28 @@ a {
 		flex-direction: column;
 		gap: 36px;
 	}
+
+	/* Letras más chicas para que las secciones se vean livianas y no tan toscas en pantallas angostas. */
+	.contenido-seccion h2 {
+		font-size: clamp(1.7rem, 5vw, 2.4rem);
+	}
+
+	.texto-seccion {
+		font-size: 1rem;
+	}
+
+	.descripcion-inicio {
+		font-size: 1.05rem;
+	}
+
+	.saludo {
+		font-size: 1rem;
+	}
+
+	.lista-habilidades li {
+		font-size: 0.88rem;
+		padding: 11px 18px;
+	}
 }
 
 /* Ajustes para celular: reduce el espacio y hace el botón más cómodo de pulsar. */
@@ -708,7 +730,7 @@ a {
 	}
 
 	.contenido-inicio h1 {
-		font-size: clamp(2.7rem, 15vw, 4.5rem);
+		font-size: clamp(2.2rem, 11vw, 3rem);
 	}
 
 	.boton {
