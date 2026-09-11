@@ -602,11 +602,29 @@ a {
 	width: 18px;
 }
 
-/* En pantallas angostas se ocultan, para no saturar el espacio junto al texto. */
+/* En pantallas angostas las columnas de habilidades ocupan casi todo el ancho, */
+/* así que las chispas se reubican en franjas libres arriba y abajo de las pastillas, más pequeñas. */
 @media (max-width: 900px) {
 	.chispa {
-		display: none;
+		height: 7px;
+		width: 16px;
 	}
+
+	.chispa-1, .chispa-2, .chispa-3, .chispa-4, .chispa-5,
+	.chispa-6, .chispa-7, .chispa-8, .chispa-9, .chispa-10 {
+		right: auto;
+	}
+
+	.chispa-1 { left: 8%; top: 9%; }
+	.chispa-2 { left: 32%; top: 12%; }
+	.chispa-3 { left: 56%; top: 8%; }
+	.chispa-4 { left: 78%; top: 11%; }
+	.chispa-5 { left: 4%; top: 90%; }
+	.chispa-6 { left: 26%; top: 88%; }
+	.chispa-7 { left: 50%; top: 91%; }
+	.chispa-8 { left: 72%; top: 87%; }
+	.chispa-9 { left: 90%; top: 10%; }
+	.chispa-10 { left: 90%; top: 90%; }
 }
 
 /* Gatitos decorativos: se pegan a la orilla inferior de la sección, sin interferir con el texto ni con los clics. */
@@ -626,10 +644,17 @@ a {
 	right: 16px;
 }
 
-/* En pantallas angostas se ocultan, porque ya no queda espacio libre a los lados del texto. */
+/* En pantallas angostas ya no hay espacio a los lados del texto, así que se achican */
+/* y se ubican en la esquina superior, lejos del párrafo. */
 @media (max-width: 900px) {
 	.gato-decorativo {
-		display: none;
+		bottom: auto;
+		font-size: 1.1rem;
+		top: 12px;
+	}
+
+	.gato-decorativo--derecha {
+		right: 12px;
 	}
 }
 
