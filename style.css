@@ -147,8 +147,8 @@ a {
 	width: 100%;
 	margin: 0;
 	z-index: 1;
-	/* Se alinea arriba (no al centro) para poder llegar hasta el principio de la página. */
-	scroll-snap-align: start;
+	/* Sin snap: por el espacio del header, "start" empujaba el scroll e impedía llegar al tope real. */
+	scroll-snap-align: none;
 }
 
 /* Crea una capa de puntos más grandes y la gira para formar líneas diagonales. */
@@ -514,7 +514,7 @@ a {
 	display: flex;
 	justify-content: center;
 	overflow: hidden;
-	padding: 220px 55px 90px;
+	padding: 250px 55px;
 	position: relative;
 }
 
@@ -530,51 +530,51 @@ a {
 
 .chispa-1 {
 	background: #ff5c9e;
-	left: 3%;
-	top: 20%;
+	left: 8%;
+	top: 32%;
 	transform: rotate(-18deg);
 }
 
 .chispa-2 {
 	background: #2fd1c5;
-	left: 5%;
-	top: 42%;
+	left: 14%;
+	top: 64%;
 	transform: rotate(24deg);
 }
 
 .chispa-3 {
 	background: #ffd23f;
-	left: 2%;
-	top: 62%;
+	left: 4%;
+	top: 48%;
 	transform: rotate(70deg);
 }
 
 .chispa-4 {
 	background: #ff8a3d;
-	right: 3%;
-	top: 25%;
+	right: 10%;
+	top: 34%;
 	transform: rotate(12deg);
 }
 
 .chispa-5 {
 	background: #7c6bff;
 	right: 5%;
-	top: 47%;
+	top: 58%;
 	transform: rotate(-30deg);
 }
 
 .chispa-6 {
 	background: #2fd1c5;
-	right: 2%;
-	top: 67%;
+	right: 16%;
+	top: 72%;
 	transform: rotate(45deg);
 }
 
 .chispa-7 {
 	background: #ff5c9e;
 	height: 8px;
-	left: 6%;
-	top: 80%;
+	left: 22%;
+	top: 40%;
 	transform: rotate(-45deg);
 	width: 18px;
 }
@@ -582,8 +582,8 @@ a {
 .chispa-8 {
 	background: #ffd23f;
 	height: 8px;
-	right: 6%;
-	top: 80%;
+	right: 22%;
+	top: 42%;
 	transform: rotate(35deg);
 	width: 18px;
 }
@@ -591,8 +591,8 @@ a {
 .chispa-9 {
 	background: #7c6bff;
 	height: 8px;
-	left: 1%;
-	top: 8%;
+	left: 22%;
+	top: 78%;
 	transform: rotate(15deg);
 	width: 18px;
 }
@@ -600,18 +600,36 @@ a {
 .chispa-10 {
 	background: #ff8a3d;
 	height: 8px;
-	right: 1%;
-	top: 8%;
+	right: 8%;
+	top: 80%;
 	transform: rotate(-25deg);
 	width: 18px;
 }
 
-/* En pantallas angostas se achican un poco más, para que quepan cómodas al costado de las pastillas. */
+/* En pantallas angostas quedan solo pegadas a los costados (bien al borde), más chicas, */
+/* para no chocar con las pastillas cuando se apilan en una sola columna. */
 @media (max-width: 900px) {
 	.chispa {
-		height: 7px;
-		width: 16px;
+		height: 5px;
+		width: 12px;
 	}
+
+	.chispa-1, .chispa-2, .chispa-3, .chispa-4, .chispa-5,
+	.chispa-6, .chispa-7, .chispa-8, .chispa-9, .chispa-10 {
+		right: auto;
+		left: auto;
+	}
+
+	.chispa-1 { left: 2%; top: 15%; }
+	.chispa-2 { left: 1%; top: 35%; }
+	.chispa-3 { left: 3%; top: 55%; }
+	.chispa-4 { right: 2%; top: 20%; }
+	.chispa-5 { right: 1%; top: 40%; }
+	.chispa-6 { right: 3%; top: 60%; }
+	.chispa-7 { left: 2%; top: 75%; }
+	.chispa-8 { right: 2%; top: 78%; }
+	.chispa-9 { left: 1%; top: 90%; }
+	.chispa-10 { right: 1%; top: 90%; }
 }
 
 /* Gatitos decorativos: se pegan a la orilla inferior de la sección, sin interferir con el texto ni con los clics. */
