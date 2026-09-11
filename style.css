@@ -126,8 +126,8 @@ a {
 /* Reduce el espacio vertical de Contacto, que quedaba demasiado grande con el padding general. */
 .seccion-contacto {
 	padding: 60px 45px;
-	/* Se alinea abajo (no al centro) para poder llegar hasta el pie de página. */
-	scroll-snap-align: end;
+	/* Sin snap: si se alineara al centro o al final, taparía el pie de página al llegar abajo. */
+	scroll-snap-align: none;
 }
 
 /* Centra el contenido textual de las secciones interiores. */
