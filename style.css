@@ -659,12 +659,6 @@ a {
 
 /* Ajustes para tablet: el menú puede ocupar dos líneas y los proyectos una sola columna. */
 @media (max-width: 760px) {
-	/* Esta "nube" sobresale por debajo de Inicio a propósito, pero en pantallas angostas */
-	/* invade el espacio de "Sobre mí" y tapa el título: se oculta aquí. */
-	.seccion-inicio::after {
-		display: none;
-	}
-
 	.navegacion {
 		align-items: flex-start;
 		flex-direction: column;
@@ -704,7 +698,7 @@ a {
 	/* En pantallas angostas el padding de 250px sobraba y empujaba el título casi hasta la siguiente sección; */
 	/* y necesita algo más arriba para no solaparse con la "nube" que sobresale de Inicio. */
 	.seccion-sobre-mi {
-		padding: 115px 30px 80px;
+		padding: 90px 30px 60px;
 	}
 
 	.columnas-habilidades {
@@ -744,7 +738,7 @@ a {
 	/* Sin esto, la regla genérica de arriba (64px 0) pisaba el padding propio de esta sección */
 	/* y el título quedaba pegado arriba, encima de la decoración celeste de Inicio. */
 	.seccion-sobre-mi {
-		padding: 140px 24px 70px;
+		padding: 90px 24px 55px;
 	}
 
 	/* Mismo caso: sin esto, Contacto perdía el padding lateral en pantallas chicas. */
