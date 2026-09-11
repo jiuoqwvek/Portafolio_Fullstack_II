@@ -704,7 +704,7 @@ a {
 	/* En pantallas angostas el padding de 250px sobraba y empujaba el título casi hasta la siguiente sección; */
 	/* y necesita algo más arriba para no solaparse con la "nube" que sobresale de Inicio. */
 	.seccion-sobre-mi {
-		padding: 140px 30px 100px;
+		padding: 115px 30px 80px;
 	}
 
 	.columnas-habilidades {
@@ -744,7 +744,7 @@ a {
 	/* Sin esto, la regla genérica de arriba (64px 0) pisaba el padding propio de esta sección */
 	/* y el título quedaba pegado arriba, encima de la decoración celeste de Inicio. */
 	.seccion-sobre-mi {
-		padding: 190px 24px 90px;
+		padding: 140px 24px 70px;
 	}
 
 	/* Mismo caso: sin esto, Contacto perdía el padding lateral en pantallas chicas. */
