@@ -23,11 +23,11 @@
 	padding: 0;
 }
 
-/* Permite desplazarse suavemente al pulsar un enlace del menú, */
-/* y hace que la sección de destino quede centrada verticalmente en pantalla. */
+/* Permite desplazarse suavemente al pulsar un enlace del menú. */
+/* (Antes también forzaba un "enganche" de scroll centrado en cada sección, */
+/* pero interrumpía el scroll normal al bajar por la página, así que se quitó). */
 html {
 	scroll-behavior: smooth;
-	scroll-snap-type: y proximity;
 }
 
 /* Estilos generales de la página: fuente, fondo, color y altura de lectura. */
@@ -111,11 +111,8 @@ a {
 }
 
 /* Define el espacio vertical común de las secciones. */
-/* scroll-snap-align: center hace que, al saltar aquí desde un link del menú, */
-/* la sección quede centrada verticalmente en la pantalla en vez de pegada arriba. */
 .seccion {
 	padding: 170px 55px;
-	scroll-snap-align: center;
 }
 
 /* Cambia el fondo de algunas secciones para separar visualmente el contenido. */
@@ -126,8 +123,6 @@ a {
 /* Reduce el espacio vertical de Contacto, que quedaba demasiado grande con el padding general. */
 .seccion-contacto {
 	padding: 60px 45px;
-	/* Sin snap: si se alineara al centro o al final, taparía el pie de página al llegar abajo. */
-	scroll-snap-align: none;
 }
 
 /* Centra el contenido textual de las secciones interiores. */
@@ -147,8 +142,6 @@ a {
 	width: 100%;
 	margin: 0;
 	z-index: 1;
-	/* Sin snap: por el espacio del header, "start" empujaba el scroll e impedía llegar al tope real. */
-	scroll-snap-align: none;
 }
 
 /* Crea una capa de puntos más grandes y la gira para formar líneas diagonales. */
@@ -678,6 +671,11 @@ a {
 
 	.rejilla-proyectos {
 		grid-template-columns: 1fr;
+	}
+
+	/* En pantallas angostas el padding de 250px sobraba y empujaba el título casi hasta la siguiente sección. */
+	.seccion-sobre-mi {
+		padding: 100px 30px;
 	}
 
 	.columnas-habilidades {
