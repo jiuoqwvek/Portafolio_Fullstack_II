@@ -111,8 +111,10 @@ a {
 }
 
 /* Define el espacio vertical común de las secciones. */
+/* scroll-margin-top evita que el header sticky tape el título al saltar aquí desde un link del menú. */
 .seccion {
 	padding: 170px 55px;
+	scroll-margin-top: 80px;
 }
 
 /* Cambia el fondo de algunas secciones para separar visualmente el contenido. */
@@ -673,9 +675,15 @@ a {
 		grid-template-columns: 1fr;
 	}
 
-	/* En pantallas angostas el padding de 250px sobraba y empujaba el título casi hasta la siguiente sección. */
+	/* El menú ocupa varias filas aquí, así que el header queda más alto: más margen de scroll. */
+	.seccion {
+		scroll-margin-top: 130px;
+	}
+
+	/* En pantallas angostas el padding de 250px sobraba y empujaba el título casi hasta la siguiente sección; */
+	/* y necesita algo más arriba para no solaparse con la "nube" que sobresale de Inicio. */
 	.seccion-sobre-mi {
-		padding: 100px 30px;
+		padding: 140px 30px 100px;
 	}
 
 	.columnas-habilidades {
