@@ -113,7 +113,7 @@ a {
 /* Define el espacio vertical común de las secciones. */
 /* scroll-margin-top evita que el header sticky tape el título al saltar aquí desde un link del menú. */
 .seccion {
-	padding: 170px 55px;
+	padding: 190px 55px;
 	scroll-margin-top: 80px;
 }
 
@@ -140,7 +140,7 @@ a {
 	min-height: 220px;
 	overflow: visible;
 	padding: 30px 0 20px;
-	position: center;
+	position: relative;
 	width: 100%;
 	margin: 0;
 	z-index: 1;
@@ -258,13 +258,13 @@ a {
 	text-align: center;
 }
 
-/* Sección más compacta que "Sobre mí": solo centra el contenido, sin tanto aire. */
+/* Mismo padding que las demás secciones (menos Inicio y Contacto), solo centra el contenido. */
 .seccion-habilidades {
 	align-items: center;
 	display: flex;
 	justify-content: center;
 	overflow: hidden;
-	padding: 160px 0;
+	padding: 190px 55px;
 	position: relative;
 }
 
@@ -509,7 +509,7 @@ a {
 	display: flex;
 	justify-content: center;
 	overflow: hidden;
-	padding: 250px 55px;
+	padding: 190px 55px;
 	position: relative;
 }
 
@@ -659,6 +659,12 @@ a {
 
 /* Ajustes para tablet: el menú puede ocupar dos líneas y los proyectos una sola columna. */
 @media (max-width: 760px) {
+	/* Esta "nube" sobresale por debajo de Inicio a propósito, pero en pantallas angostas */
+	/* invade el espacio de "Sobre mí" y tapa el título: se oculta aquí. */
+	.seccion-inicio::after {
+		display: none;
+	}
+
 	.navegacion {
 		align-items: flex-start;
 		flex-direction: column;
@@ -738,7 +744,7 @@ a {
 	/* Sin esto, la regla genérica de arriba (64px 0) pisaba el padding propio de esta sección */
 	/* y el título quedaba pegado arriba, encima de la decoración celeste de Inicio. */
 	.seccion-sobre-mi {
-		padding: 130px 24px 80px;
+		padding: 190px 24px 90px;
 	}
 
 	/* Mismo caso: sin esto, Contacto perdía el padding lateral en pantallas chicas. */
