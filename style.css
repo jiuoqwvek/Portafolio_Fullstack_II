@@ -10,7 +10,7 @@
 	--color-texto-suave: #847463;
 	--color-decoracion: #b7a38e;
 	--color-borde: #e0d9d2;
-	--color-enlace: #d8407f;
+	--color-enlace: #f35899;
 	--color-nombre: #67c4d2;
 	--sombra-suave: 0 12px 30px #6a6b6b1a;
 	--ancho-contenido: 1080px;
@@ -23,9 +23,11 @@
 	padding: 0;
 }
 
-/* Permite desplazarse suavemente al pulsar un enlace del menú. */
+/* Permite desplazarse suavemente al pulsar un enlace del menú, */
+/* y hace que la sección de destino quede centrada verticalmente en pantalla. */
 html {
 	scroll-behavior: smooth;
+	scroll-snap-type: y proximity;
 }
 
 /* Estilos generales de la página: fuente, fondo, color y altura de lectura. */
@@ -109,13 +111,21 @@ a {
 }
 
 /* Define el espacio vertical común de las secciones. */
+/* scroll-snap-align: center hace que, al saltar aquí desde un link del menú, */
+/* la sección quede centrada verticalmente en la pantalla en vez de pegada arriba. */
 .seccion {
-	padding: 88px 0;
+	padding: 170px 55px;
+	scroll-snap-align: center;
 }
 
 /* Cambia el fondo de algunas secciones para separar visualmente el contenido. */
 .seccion-alternativa {
 	background: var(--color-fondo-alternativo);
+}
+
+/* Reduce el espacio vertical de Contacto, que quedaba demasiado grande con el padding general. */
+.seccion-contacto {
+	padding: 60px 45px;
 }
 
 /* Centra el contenido textual de las secciones interiores. */
@@ -128,9 +138,9 @@ a {
 	/* Mantiene el color base de la tarjeta de presentación. */
 	background-color: var(--color-acento);
 	border-bottom: 1px solid var(--color-borde);
-	min-height: 320px;
+	min-height: 220px;
 	overflow: visible;
-	padding: 68px 0 30px;
+	padding: 30px 0 20px;
 	position: center;
 	width: 100%;
 	margin: 0;
@@ -156,7 +166,7 @@ a {
 	background-size: 85px 80px;
 	bottom: -46px;
 	content: "";
-	height: 59px;
+	height: 55px;
 	left: 0px;
 	pointer-events: none;
 	position: absolute;
@@ -242,28 +252,51 @@ a {
 /* Ancho máximo y color del texto descriptivo. */
 .texto-seccion {
 	color: var(--color-texto-suave);
+	font-size: 1.12rem;
+	hyphens: auto;
 	margin: auto;
-	max-width: 800px;
+	max-width: 900px;
+	text-align: center;
 }
 
-/* Muestra las habilidades como etiquetas ordenadas y flexibles. */
+/* Sección más compacta que "Sobre mí": solo centra el contenido, sin tanto aire. */
+.seccion-habilidades {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	overflow: hidden;
+	padding: 160px 0;
+	position: relative;
+}
+
+/* Coloca las dos columnas de habilidades repartidas a lo ancho de la sección. */
+.columnas-habilidades {
+	display: flex;
+	gap: 100px;
+	margin: 30px auto 0;
+	max-width: 620px;
+	width: 100%;
+}
+
+/* Muestra las habilidades de cada categoría apiladas en columna, ocupando el ancho disponible. */
 .lista-habilidades {
 	display: flex;
-	flex-wrap: wrap;
-	gap: 14px;
-	justify-content: center;
+	flex: 1;
+	flex-direction: column;
+	gap: 20px;
 	list-style: none;
 }
 
-/* Apariencia individual de cada habilidad. */
+/* Apariencia individual de cada habilidad, bien redondeada y del mismo ancho dentro de su columna. */
 .lista-habilidades li {
 	background: var(--color-superficie);
 	border: 1px solid var(--color-borde);
 	border-radius: 24px;
 	color: var(--color-principal-oscuro);
-	font-size: 1.05rem;
+	font-size: 1rem;
 	font-weight: bold;
-	padding: 12px 22px;
+	padding: 16px 28px;
+	text-align: center;
 }
 
 /* Divide los proyectos en columnas iguales en pantallas amplias. */
@@ -304,12 +337,11 @@ a {
 
 /* Enlace que lleva al repositorio del proyecto. */
 .enlace-proyecto {
-	color: var(--color-principal);
+	color: var(--color-enlace);
 	font-weight: bold;
 }
 
 .enlace-proyecto:hover {
-	color: var(--color-enlace);
 	text-decoration: underline;
 }
 
@@ -319,12 +351,18 @@ a {
 	flex-wrap: wrap;
 	gap: 20px;
 	justify-content: center;
-	margin: 0 auto 30px;
+	margin: 34px auto 0;
+}
+
+/* Repite los mismos datos de contacto dentro del footer, con menos espacio alrededor. */
+.datos-pie {
+	font-size: 0.9rem;
+	margin: 0 auto 15px;
 }
 
 /* Destaca los enlaces de contacto. */
 .datos-contacto a {
-	color: var(--color-enlace);
+	color: var(--color-principal-oscuro);
 	font-weight: bold;
 }
 
@@ -342,6 +380,20 @@ a {
 
 .icono-github {
 	fill: currentColor;
+	height: 18px;
+	width: 18px;
+}
+
+/* Alinea el sobre junto al correo electrónico. */
+.enlace-correo {
+	align-items: center;
+	display: inline-flex;
+	gap: 6px;
+}
+
+.icono-correo {
+	color: currentColor;
+	flex-shrink: 0;
 	height: 18px;
 	width: 18px;
 }
@@ -369,7 +421,7 @@ a {
 	border-radius: 5px;
 	color: var(--color-texto);
 	font: inherit;
-	padding: 12px;
+	padding: 9px;
 	width: 100%;
 }
 
@@ -423,14 +475,138 @@ a {
 	text-align: center;
 }
 
+/* Frase de cierre destacada, con una estrellita y un gatito de texto a los lados. */
+.frase-pie {
+	align-items: center;
+	color: var(--color-principal-oscuro);
+	display: inline-flex;
+	flex-wrap: wrap;
+	font-weight: bold;
+	gap: 8px;
+	justify-content: center;
+	margin-bottom: 10px;
+}
+
+.estrella-pie {
+	height: 16px;
+	width: 16px;
+}
+
+/* Gatito de texto que acompaña la frase de cierre, a juego con los gatitos de "Sobre mí". */
+.gato-pie {
+	color: var(--color-decoracion);
+	font-family: "arial", monospace;
+	font-weight: normal;
+}
+
+/* Texto de derechos reservados, un poco más chico que la frase de arriba. */
+.derechos-reservados {
+	font-size: 0.9rem;
+}
+
 /* La sección "Sobre mí" es el marco de referencia para ubicar los gatitos en sus orillas, y se agranda un poco para darles espacio. */
 .seccion-sobre-mi {
 	align-items: center;
 	display: flex;
 	justify-content: center;
-	min-height: 540px;
 	overflow: hidden;
+	padding: 250px 55px;
 	position: relative;
+}
+
+/* Chispitas decorativas tipo helado: pastillas de colores vivos, rotadas y repartidas por la sección. */
+.chispa {
+	border-radius: 20px;
+	height: 10px;
+	pointer-events: none;
+	position: absolute;
+	width: 26px;
+	z-index: 1;
+}
+
+.chispa-1 {
+	background: #ff5c9e;
+	left: 8%;
+	top: 32%;
+	transform: rotate(-18deg);
+}
+
+.chispa-2 {
+	background: #2fd1c5;
+	left: 14%;
+	top: 64%;
+	transform: rotate(24deg);
+}
+
+.chispa-3 {
+	background: #ffd23f;
+	left: 4%;
+	top: 48%;
+	transform: rotate(70deg);
+}
+
+.chispa-4 {
+	background: #ff8a3d;
+	right: 10%;
+	top: 34%;
+	transform: rotate(12deg);
+}
+
+.chispa-5 {
+	background: #7c6bff;
+	right: 5%;
+	top: 58%;
+	transform: rotate(-30deg);
+}
+
+.chispa-6 {
+	background: #2fd1c5;
+	right: 16%;
+	top: 72%;
+	transform: rotate(45deg);
+}
+
+.chispa-7 {
+	background: #ff5c9e;
+	height: 8px;
+	left: 22%;
+	top: 40%;
+	transform: rotate(-45deg);
+	width: 18px;
+}
+
+.chispa-8 {
+	background: #ffd23f;
+	height: 8px;
+	right: 22%;
+	top: 42%;
+	transform: rotate(35deg);
+	width: 18px;
+}
+
+.chispa-9 {
+	background: #7c6bff;
+	height: 8px;
+	left: 22%;
+	top: 78%;
+	transform: rotate(15deg);
+	width: 18px;
+}
+
+.chispa-10 {
+	background: #ff8a3d;
+	height: 8px;
+	right: 8%;
+	top: 80%;
+	transform: rotate(-25deg);
+	width: 18px;
+}
+
+/* En pantallas angostas se ocultan, para no saturar el espacio junto al texto. */
+@media (max-width: 900px) {
+	.chispa {
+		display: none;
+	}
 }
 
 /* Gatitos decorativos: se pegan a la orilla inferior de la sección, sin interferir con el texto ni con los clics. */
@@ -474,6 +650,11 @@ a {
 	.rejilla-proyectos {
 		grid-template-columns: 1fr;
 	}
+
+	.columnas-habilidades {
+		flex-direction: column;
+		gap: 36px;
+	}
 }
 
 /* Ajustes para celular: reduce el espacio y hace el botón más cómodo de pulsar. */
@@ -485,6 +666,16 @@ a {
 	.seccion-inicio {
 		min-height: 300px;
 		padding: 60px 0 50px;
+	}
+
+	.seccion-habilidades {
+		min-height: 0;
+		padding: 64px 0;
+	}
+
+	.columnas-habilidades {
+		flex-direction: column;
+		gap: 28px;
 	}
 
 	.contenido-inicio h1 {
