@@ -662,22 +662,37 @@ a {
 	.navegacion {
 		align-items: flex-start;
 		flex-direction: column;
-		gap: 12px;
-		padding: 16px 0;
+		gap: 8px;
+		min-height: 0;
+		padding: 10px 0;
+	}
+
+	/* Barra más chica en general, para que el header ocupe menos alto en pantallas angostas. */
+	.logotipo {
+		font-size: 1.05rem;
+	}
+
+	.estrella {
+		height: 16px;
+		width: 16px;
 	}
 
 	.enlaces-navegacion {
 		flex-wrap: wrap;
-		gap: 10px 16px;
+		gap: 6px 14px;
+	}
+
+	.enlaces-navegacion a {
+		font-size: 0.85rem;
 	}
 
 	.rejilla-proyectos {
 		grid-template-columns: 1fr;
 	}
 
-	/* El menú ocupa varias filas aquí, así que el header queda más alto: más margen de scroll. */
+	/* El menú puede ocupar dos filas: un poco más de margen de scroll que en escritorio. */
 	.seccion {
-		scroll-margin-top: 130px;
+		scroll-margin-top: 95px;
 	}
 
 	/* En pantallas angostas el padding de 250px sobraba y empujaba el título casi hasta la siguiente sección; */
@@ -718,6 +733,17 @@ a {
 @media (max-width: 480px) {
 	.seccion {
 		padding: 64px 0;
+	}
+
+	/* Sin esto, la regla genérica de arriba (64px 0) pisaba el padding propio de esta sección */
+	/* y el título quedaba pegado arriba, encima de la decoración celeste de Inicio. */
+	.seccion-sobre-mi {
+		padding: 130px 24px 80px;
+	}
+
+	/* Mismo caso: sin esto, Contacto perdía el padding lateral en pantallas chicas. */
+	.seccion-contacto {
+		padding: 50px 24px;
 	}
 
 	.seccion-inicio {
