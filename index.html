@@ -54,18 +54,35 @@
         </section>
 
         <!-- Lista de habilidades técnicas. -->
-        <section class="seccion seccion-alternativa" id="Habilidades" aria-labelledby="titulo-habilidades">
+        <section class="seccion seccion-alternativa seccion-habilidades" id="Habilidades" aria-labelledby="titulo-habilidades">
+            <!-- Chispitas decorativas tipo helado, repartidas por la sección. -->
+            <span class="chispa chispa-1" aria-hidden="true"></span>
+            <span class="chispa chispa-2" aria-hidden="true"></span>
+            <span class="chispa chispa-3" aria-hidden="true"></span>
+            <span class="chispa chispa-4" aria-hidden="true"></span>
+            <span class="chispa chispa-5" aria-hidden="true"></span>
+            <span class="chispa chispa-6" aria-hidden="true"></span>
+            <span class="chispa chispa-7" aria-hidden="true"></span>
+            <span class="chispa chispa-8" aria-hidden="true"></span>
+            <span class="chispa chispa-9" aria-hidden="true"></span>
+            <span class="chispa chispa-10" aria-hidden="true"></span>
+
             <div class="contenedor contenido-seccion">
             <h2 id="titulo-habilidades">Habilidades</h2>
-            <ul class="lista-habilidades">
-                <li>Java</li>
-                <li>Python</li>
-                <li>SQL/Oracle</li>
-                <li>Git/Github</li>
-                <li>APIs REST</li>
-                <li>Spring Boot</li>
 
-            </ul>
+            <div class="columnas-habilidades">
+                <ul class="lista-habilidades">
+                    <li>Java</li>
+                    <li>Python</li>
+                    <li>SQL/Oracle</li>
+                </ul>
+
+                <ul class="lista-habilidades">
+                    <li>Git/GitHub</li>
+                    <li>APIs REST</li>
+                    <li>Spring Boot</li>
+                </ul>
+            </div>
             </div>
         </section>
 
@@ -99,17 +116,9 @@
         </section>
 
         <!-- Datos de contacto y formulario para enviar un mensaje. -->
-        <section class="seccion seccion-alternativa" id="Contacto" aria-labelledby="titulo-contacto">
+        <section class="seccion seccion-alternativa seccion-contacto" id="Contacto" aria-labelledby="titulo-contacto">
             <div class="contenedor contenido-seccion">
             <h2 id="titulo-contacto">Contacto</h2>
-
-            <address class="datos-contacto">
-                <a href="mailto:noemiaolanicaiguan@gmail.com">noemiaolanicaiguan@gmail.com</a>
-                <a class="enlace-github" href="https://github.com/jiuoqwvek" target="_blank" rel="noopener noreferrer">
-                    <svg class="icono-github" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-                    GitHub
-                </a>
-            </address>
 
             <form id="formulario-contacto" class="formulario-contacto" action="https://formsubmit.co/noemiaolanicaiguan@gmail.com" method="POST" novalidate>
                 <input type="hidden" name="_subject" value="Nuevo mensaje desde el portafolio">
@@ -135,7 +144,26 @@
 
     <!-- Pie de pagina. -->
     <footer class="pie-pagina">
-        <p>&copy; 2026 Elu. Todos los derechos reservados.</p>
+        <address class="datos-contacto datos-pie">
+            <a class="enlace-correo" href="mailto:noemiaolanicaiguan@gmail.com">
+                <svg class="icono-correo" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.5h18a1 1 0 011 1v11a1 1 0 01-1 1H3a1 1 0 01-1-1v-11a1 1 0 011-1z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M2.5 6.5l9.5 7 9.5-7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                noemiaolanicaiguan@gmail.com
+            </a>
+            <a class="enlace-github" href="https://github.com/jiuoqwvek" target="_blank" rel="noopener noreferrer">
+                <svg class="icono-github" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+                GitHub
+            </a>
+        </address>
+
+        <p class="frase-pie">
+            <svg class="estrella estrella-pie" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 5.9 6.6 1-4.8 4.6 1.1 6.5-5.8-3.1-5.8 3.1 1.1-6.5-4.8-4.6 6.6-1z" /></svg>
+            Hecho entre tecitos y gatos
+            <span class="gato-pie" aria-hidden="true">(˵◝ ⩊  ◜˵マ</span>
+            <svg class="estrella estrella-pie" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 5.9 6.6 1-4.8 4.6 1.1 6.5-5.8-3.1-5.8 3.1 1.1-6.5-4.8-4.6 6.6-1z" /></svg>
+
+        </p>
+
+        <p class="derechos-reservados">&copy; 2026 Eluney. Todos los derechos reservados.</p>
     </footer>
 
     <script src="script.js"></script>
