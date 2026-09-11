@@ -126,6 +126,8 @@ a {
 /* Reduce el espacio vertical de Contacto, que quedaba demasiado grande con el padding general. */
 .seccion-contacto {
 	padding: 60px 45px;
+	/* Se alinea abajo (no al centro) para poder llegar hasta el pie de página. */
+	scroll-snap-align: end;
 }
 
 /* Centra el contenido textual de las secciones interiores. */
@@ -145,6 +147,8 @@ a {
 	width: 100%;
 	margin: 0;
 	z-index: 1;
+	/* Se alinea arriba (no al centro) para poder llegar hasta el principio de la página. */
+	scroll-snap-align: start;
 }
 
 /* Crea una capa de puntos más grandes y la gira para formar líneas diagonales. */
@@ -293,9 +297,9 @@ a {
 	border: 1px solid var(--color-borde);
 	border-radius: 24px;
 	color: var(--color-principal-oscuro);
-	font-size: 1rem;
+	font-size: 0.95rem;
 	font-weight: bold;
-	padding: 16px 28px;
+	padding: 13px 20px;
 	text-align: center;
 }
 
@@ -510,7 +514,7 @@ a {
 	display: flex;
 	justify-content: center;
 	overflow: hidden;
-	padding: 250px 55px;
+	padding: 220px 55px 90px;
 	position: relative;
 }
 
@@ -526,51 +530,51 @@ a {
 
 .chispa-1 {
 	background: #ff5c9e;
-	left: 8%;
-	top: 32%;
+	left: 3%;
+	top: 20%;
 	transform: rotate(-18deg);
 }
 
 .chispa-2 {
 	background: #2fd1c5;
-	left: 14%;
-	top: 64%;
+	left: 5%;
+	top: 42%;
 	transform: rotate(24deg);
 }
 
 .chispa-3 {
 	background: #ffd23f;
-	left: 4%;
-	top: 48%;
+	left: 2%;
+	top: 62%;
 	transform: rotate(70deg);
 }
 
 .chispa-4 {
 	background: #ff8a3d;
-	right: 10%;
-	top: 34%;
+	right: 3%;
+	top: 25%;
 	transform: rotate(12deg);
 }
 
 .chispa-5 {
 	background: #7c6bff;
 	right: 5%;
-	top: 58%;
+	top: 47%;
 	transform: rotate(-30deg);
 }
 
 .chispa-6 {
 	background: #2fd1c5;
-	right: 16%;
-	top: 72%;
+	right: 2%;
+	top: 67%;
 	transform: rotate(45deg);
 }
 
 .chispa-7 {
 	background: #ff5c9e;
 	height: 8px;
-	left: 22%;
-	top: 40%;
+	left: 6%;
+	top: 80%;
 	transform: rotate(-45deg);
 	width: 18px;
 }
@@ -578,8 +582,8 @@ a {
 .chispa-8 {
 	background: #ffd23f;
 	height: 8px;
-	right: 22%;
-	top: 42%;
+	right: 6%;
+	top: 80%;
 	transform: rotate(35deg);
 	width: 18px;
 }
@@ -587,8 +591,8 @@ a {
 .chispa-9 {
 	background: #7c6bff;
 	height: 8px;
-	left: 22%;
-	top: 78%;
+	left: 1%;
+	top: 8%;
 	transform: rotate(15deg);
 	width: 18px;
 }
@@ -596,35 +600,18 @@ a {
 .chispa-10 {
 	background: #ff8a3d;
 	height: 8px;
-	right: 8%;
-	top: 80%;
+	right: 1%;
+	top: 8%;
 	transform: rotate(-25deg);
 	width: 18px;
 }
 
-/* En pantallas angostas las columnas de habilidades ocupan casi todo el ancho, */
-/* así que las chispas se reubican en franjas libres arriba y abajo de las pastillas, más pequeñas. */
+/* En pantallas angostas se achican un poco más, para que quepan cómodas al costado de las pastillas. */
 @media (max-width: 900px) {
 	.chispa {
 		height: 7px;
 		width: 16px;
 	}
-
-	.chispa-1, .chispa-2, .chispa-3, .chispa-4, .chispa-5,
-	.chispa-6, .chispa-7, .chispa-8, .chispa-9, .chispa-10 {
-		right: auto;
-	}
-
-	.chispa-1 { left: 8%; top: 9%; }
-	.chispa-2 { left: 32%; top: 12%; }
-	.chispa-3 { left: 56%; top: 8%; }
-	.chispa-4 { left: 78%; top: 11%; }
-	.chispa-5 { left: 4%; top: 90%; }
-	.chispa-6 { left: 26%; top: 88%; }
-	.chispa-7 { left: 50%; top: 91%; }
-	.chispa-8 { left: 72%; top: 87%; }
-	.chispa-9 { left: 90%; top: 10%; }
-	.chispa-10 { left: 90%; top: 90%; }
 }
 
 /* Gatitos decorativos: se pegan a la orilla inferior de la sección, sin interferir con el texto ni con los clics. */
@@ -644,13 +631,12 @@ a {
 	right: 16px;
 }
 
-/* En pantallas angostas ya no hay espacio a los lados del texto, así que se achican */
-/* y se ubican en la esquina superior, lejos del párrafo. */
+/* En pantallas angostas ya no hay espacio a los lados del texto, así que se achica */
+/* pero se mantiene abajo, justo debajo del párrafo. */
 @media (max-width: 900px) {
 	.gato-decorativo {
-		bottom: auto;
+		bottom: 8px;
 		font-size: 1.1rem;
-		top: 12px;
 	}
 
 	.gato-decorativo--derecha {
